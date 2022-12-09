@@ -15,6 +15,8 @@ const items = [
 
 const res = new TreeStore(items);
 
+console.log('TreeStore tests');
+
 describe('TreeStoreTests', () => {
     test('validateGetAll', () => {
         expect(res.getAll()).toEqual(items);
@@ -22,8 +24,14 @@ describe('TreeStoreTests', () => {
     test('validateGetItem', () => {
         expect(res.getItem(2)).toEqual({ id: 2, parent: 1, type: 'test' });
     });
-    test('validateGetChildren', () => {
+    test('validateGetChildrenWithExisted1', () => {
         expect(res.getChildren(4)).toEqual([{ id: 7, parent: 4, type: null }, { id: 8, parent: 4, type: null }]);
+    });
+    test('validateGetChildrenWithExisted2', () => {
+        expect(res.getChildren(2)).toEqual([{"id":4,"parent":2,"type":"test"},{"id":5,"parent":2,"type":"test"},{"id":6,"parent":2,"type":"test"}]);
+    })
+    test('validateGetChildrenWithoutChildren', () => {
+        expect(res.getChildren(5)).toEqual([]);
     });
     test('validateGetAllChildren', () => {
         expect(res.getAllChildren(2)).toEqual([{"id":4,"parent":2,"type":"test"},{"id":5,"parent":2,"type":"test"},{"id":6,"parent":2,"type":"test"},{"id":7,"parent":4,"type":null},{"id":8,"parent":4,"type":null}]);
