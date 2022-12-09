@@ -1,5 +1,3 @@
-export {}
-
 type ID = number | string;
 
 interface vertex {
@@ -82,6 +80,8 @@ const items: Array<vertex> = [
     { id: 7, parent: 4, type: null },
     { id: 8, parent: 4, type: null },
 ];
+
+export default TreeStore;
 
 //const ts: TreeStore = new TreeStore(items);
 

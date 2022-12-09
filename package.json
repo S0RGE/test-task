@@ -4,12 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "ts-test": "nyc ./node_modules/.bin/_mocha './src/ts/test/**/*.test.ts'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^29.3.1"
+    "@testdeck/mocha": "^0.3.3",
+    "@types/chai": "^4.3.4",
+    "chai": "^4.3.7",
+    "jest": "^29.3.1",
+    "mocha": "^10.1.0",
+    "nyc": "^15.1.0",
+    "ts-node": "^10.9.1"
   }
 }
