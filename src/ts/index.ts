@@ -35,7 +35,7 @@ class TreeStore implements ITreeStore {
         return this.items.filter(item => item.parent === id);
     }
 
-    getArrayAllChildren(array: Array<vertex>) : Array<vertex> {
+    private getArrayAllChildren(array: Array<vertex>) : Array<vertex> {
         let result: Array<vertex> = [];
         array.forEach(element => {
             const res: Array<vertex> = this.getChildren(element.id);
